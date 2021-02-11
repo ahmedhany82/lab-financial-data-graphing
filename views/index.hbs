@@ -3,10 +3,36 @@
   <head>
     <title> {{title}} </title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   </head>
   <body>
     <h1> {{title}} </h1>
-    <p>Welcome to  {{title}} </p>
+    <h2>Filters</h2>
+    <div>
+      <label for="start">From:</label>
+      <input class="start" type="date" id="start" name="range-start"
+        value="2021-01-01">
+      <label for="end">To:</label>
+      <input class="end" type="date" id="end" name="range-end"
+        value="2021-02-10">      
+    </div>
+    <br>
+    <div>
+        <label for="currency-select">Currency :</label>
+        <select class="currency" name="currency" id="currency-select">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+        </select>
+    </div>
+    <h2>Values</h2>
+    <div>
+      <p>Max: <span class="maxValue">0</span><span class="currenySymbol"> USD</span></p>
+      <p>Min: <span class="minValue">0</span><span class="currenySymbol"> USD</span></p>
+    </div>
+
+
+    <canvas id="myChart" width="200" height="200"></canvas> 
   </body>
   <script src="/javascripts/financial-data.js" charset="utf-8"></script>
 </html>
